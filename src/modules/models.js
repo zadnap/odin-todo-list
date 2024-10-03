@@ -27,7 +27,7 @@ class Todo {
     this.checklist.push(item);
   }
 
-  removeCheckListItem(index) {
+  discardCheckListItem(index) {
     this.checklist.splice(index, 1);
   }
 }
@@ -43,7 +43,7 @@ class Project {
     this.todos.push(todo);
   }
 
-  removeTodo(index) {
+  discardTodo(index) {
     this.todos.splice(index, 1);
   }
 }

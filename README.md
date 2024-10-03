@@ -1,6 +1,6 @@
 # Odin Todo List
 
-- This project represents a todo list web-based app.
+- This project represents a web-based todo list app.
 
 ### Preview Screenshots:
 

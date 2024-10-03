@@ -31,7 +31,7 @@ function addProject(newProject) {
   projects.push(newProject);
 }
 
-function deleteProject(index) {
+function discardProject(index) {
   projects.splice(index, 1);
 }
 
@@ -46,7 +46,7 @@ function getCurrentProject() {
 export {
   getProjects,
   addProject,
-  deleteProject,
+  discardProject,
   setCurrentProject,
   getCurrentProject,
 };
