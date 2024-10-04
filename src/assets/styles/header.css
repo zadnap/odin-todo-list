@@ -1,0 +1,16 @@
+header {
+  margin-bottom: 10px;
+}
+
+header .title {
+  display: inline-block;
+  font-size: 1.4rem;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+header .description {
+  font-size: 1rem;
+  color: var(--sub-text-color);
+  font-weight: 500;
+}

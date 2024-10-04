@@ -1,4 +1,3 @@
-import { format } from "date-fns";
 import { getStorage, setStorage } from "../utils/storage";
 import { Project, Todo } from "./models";
 
@@ -11,7 +10,7 @@ if (!localStorage.getItem("projects")) {
     const defaultTodo = new Todo(
       "Default todo",
       "This is your default todo",
-      format(new Date(), "MM/dd/yyyy"),
+      new Date(),
       0
     );
     defaultProject.todos.push(defaultTodo);
