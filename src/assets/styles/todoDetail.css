@@ -25,7 +25,7 @@
 }
 .todo-detail .body .description {
   color: var(--sub-text-color);
-  font-weight: 400;
+  font-weight: 500;
 }
 .todo-detail .body .due-date {
   font-size: 0.9rem;
@@ -39,10 +39,6 @@
   grid-column: 1 / -1;
 }
 .todo-detail .checklist li {
-  padding: var(--section-padding);
-  display: flex;
-  align-items: center;
-  gap: 7px;
   border-radius: 5px;
   border: 1px solid var(--border-color);
   transition: all ease 0.1s;
@@ -50,7 +46,14 @@
 .todo-detail .checklist li:hover {
   background-color: var(--overlay-color);
 }
+.todo-detail .checklist li input {
+  cursor: pointer;
+}
 .todo-detail .checklist li label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: var(--section-padding);
   flex: 1;
   cursor: pointer;
 }

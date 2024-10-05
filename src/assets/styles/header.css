@@ -21,4 +21,8 @@ header .actions {
 }
 header .actions .create-todo {
   margin-right: auto;
+  transition: all ease 0.3s;
+}
+header .actions .create-todo:hover i {
+  transform: rotate(90deg);
 }

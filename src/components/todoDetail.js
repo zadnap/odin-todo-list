@@ -24,11 +24,13 @@ function TodoDetail({ title, description, dueDate, checklist }) {
               .map(
                 (item, index) =>
                   `<li>
-                  <input id=${index} type="checkbox" ${
+                    <label for=${index}>
+                      <input id=${index} type="checkbox" ${
                     item.isChecked ? "checked" : ""
                   }> 
-                  <label for=${index}>${item.title}</label>
-                </li>`
+                      ${item.title}
+                    </label>
+                  </li>`
               )
               .join("")}
         </ul>
