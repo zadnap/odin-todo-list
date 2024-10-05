@@ -12,7 +12,7 @@ header .description {
   font-size: 1rem;
   color: var(--sub-text-color);
   font-weight: 500;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 header .actions {

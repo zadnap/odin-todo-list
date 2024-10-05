@@ -1,14 +1,30 @@
 .btn {
   font-size: 0.9rem;
   display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 5px;
-  border-radius: 7px;
-  padding: 7px 10px;
-  font-weight: 400;
+  gap: 7px;
+  border-radius: 5px;
+  padding: 7px 12px;
+  font-weight: 500;
+  transition: all ease 0.1s;
 }
-.btn-default:hover {
+.btn:active {
+  transform: scale(0.9);
+}
+
+.btn-square {
+  width: 30px;
+  height: 30px;
+  padding: 7px;
+}
+
+.btn-default {
   background-color: var(--overlay-color);
+}
+
+.btn-default:hover {
+  background-color: #eeeeee;
 }
 
 .btn-primary {

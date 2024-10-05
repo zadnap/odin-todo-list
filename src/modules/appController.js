@@ -21,6 +21,7 @@ if (!localStorage.getItem("projects")) {
 
 const projects = getStorage();
 let currentProjectIndex = 0;
+let currentTodoIndex = 0;
 
 function getProjects() {
   return projects;
@@ -42,10 +43,16 @@ function getCurrentProject() {
   return projects[currentProjectIndex];
 }
 
+function getCurrentTodo() {
+  const currentProject = getCurrentProject();
+  return currentProject.todos[currentTodoIndex];
+}
+
 export {
   getProjects,
   addProject,
   discardProject,
   setCurrentProject,
   getCurrentProject,
+  getCurrentTodo,
 };

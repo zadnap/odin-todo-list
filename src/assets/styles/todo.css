@@ -5,6 +5,8 @@
   border: 1px solid var(--border-color);
   padding: 10px 25px;
   border-radius: 5px;
+  cursor: pointer;
+  transition: all ease 0.1s;
 }
 
 .todo .date {
@@ -15,6 +17,9 @@
   padding-right: 20px;
   font-weight: 500;
 }
+.todo .date .month {
+  font-size: 1.1rem;
+}
 .todo .date .day {
   font-size: 1.6rem;
 }
@@ -22,20 +27,12 @@
 .todo .content {
   margin: 0 20px;
   flex: 1;
-  border-right: 1px solid var(--border-color);
-}
-.todo .content .title {
-  font-size: 1.2rem;
 }
 .todo .content .description {
   color: var(--sub-text-color);
   font-weight: 400;
 }
 
-.todo.active {
+.todo:hover {
   background-color: var(--overlay-color);
-}
-.todo.active .edit-btn {
-  color: white;
-  background-color: #172838;
 }

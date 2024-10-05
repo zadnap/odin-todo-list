@@ -1,6 +1,6 @@
 import "../assets/styles/todo.css";
 
-import { getDay } from "date-fns";
+import { format } from "date-fns";
 import { getMonthName } from "../utils/date-format";
 
 function Todo(title, description, dueDate) {
@@ -8,7 +8,7 @@ function Todo(title, description, dueDate) {
   todoElement.classList.add("todo");
 
   const month = getMonthName(dueDate);
-  const day = getDay(dueDate);
+  const day = format(dueDate, "dd");
 
   todoElement.innerHTML = `
         <div class="date">
@@ -19,7 +19,6 @@ function Todo(title, description, dueDate) {
             <h4 class="title">${title}</h4>
             <p class="description">${description}</p>
         </div>
-        <button class="btn btn-default edit-btn">Edit</button>
     `;
 
   return todoElement;

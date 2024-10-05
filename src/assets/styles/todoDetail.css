@@ -1,0 +1,59 @@
+.todo-detail {
+  flex: 3;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+}
+
+.todo-detail .head {
+  padding: 7px 10px;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.todo-detail .body {
+  padding: 7px 10px;
+  display: grid;
+  grid-template-columns: 1fr 70px;
+  grid-template-rows: auto 1fr;
+  align-items: start;
+}
+.todo-detail .body .actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+.todo-detail .body .description {
+  color: var(--sub-text-color);
+  font-weight: 400;
+}
+
+.todo-detail .checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-top: 10px;
+  grid-column: 1 / -1;
+}
+.todo-detail .checklist li {
+  padding: 7px 10px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  border-radius: 5px;
+  border: 1px solid var(--border-color);
+  transition: all ease 0.1s;
+}
+.todo-detail .checklist li:hover {
+  background-color: var(--overlay-color);
+}
+.todo-detail .checklist li label {
+  flex: 1;
+  cursor: pointer;
+}
+.todo-detail .checklist li:has(input:checked) {
+  background-color: var(--overlay-color);
+}
+.todo-detail .checklist li input:checked + label {
+  text-decoration: line-through;
+}

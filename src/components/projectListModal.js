@@ -1,4 +1,3 @@
-import "../assets/styles/keyframes.css";
 import "../assets/styles/modal.css";
 import "../assets/styles/projectListModal.css";
 
@@ -20,8 +19,9 @@ function ProjectListModal() {
         <button class="btn btn-default"><i class="fa-solid fa-xmark"></i></button>
     </div>
     <div class="body">
-        ${projectList.map((project) => {
-          return `<div class="project">
+        ${projectList
+          .map((project) => {
+            return `<div class="project">
             <h4 class="title">${project.title}</h4>
             ${
               currentProject === project
@@ -29,7 +29,8 @@ function ProjectListModal() {
                 : `<button class="btn btn-default">View</button>`
             }
           </div>`;
-        })}
+          })
+          .join("")}
     </div>
   `;
 

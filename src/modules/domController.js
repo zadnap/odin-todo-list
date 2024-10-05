@@ -1,8 +1,11 @@
 import Header from "../components/header";
+import TodoDetail from "../components/todoDetail";
 import TodoList from "../components/todoList";
-import { getCurrentProject } from "./appController";
+
+import { getCurrentProject, getCurrentTodo } from "./appController";
 
 const currentProject = getCurrentProject();
+const currentTodo = getCurrentTodo();
 const body = document.querySelector("body");
 
 function renderProject() {
@@ -13,4 +16,9 @@ function renderTodoList() {
   body.appendChild(TodoList(currentProject.todos));
 }
 
-export { renderProject, renderTodoList };
+function renderTodoDetail() {
+  const todoListSection = document.querySelector(".todo-list");
+  todoListSection.appendChild(TodoDetail(currentTodo));
+}
+
+export { renderProject, renderTodoList, renderTodoDetail };
