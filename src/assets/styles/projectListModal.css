@@ -3,15 +3,26 @@
   max-height: 70%;
 }
 
+.modal .container .body {
+  padding: 0;
+}
+
 .project {
+  cursor: pointer;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 5px;
+  padding: var(--section-padding);
   border-radius: 5px;
 }
+
+.project:hover {
+  background-color: var(--overlay-color);
+}
+
 .project .title {
   max-width: 60%;
+  font-weight: 400;
   overflow-x: hidden;
   text-overflow: ellipsis;
   overflow-wrap: nowrap;
