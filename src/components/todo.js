@@ -3,9 +3,13 @@ import "../assets/styles/todo.css";
 import { format } from "date-fns";
 import { getMonthName } from "../utils/date-format";
 
-function Todo(title, description, dueDate) {
+function Todo(title, description, dueDate, isChosen) {
   const todoElement = document.createElement("li");
   todoElement.classList.add("todo");
+
+  if (isChosen) {
+    todoElement.classList.add("chosen");
+  }
 
   const month = getMonthName(dueDate);
   const day = format(dueDate, "dd");

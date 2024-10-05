@@ -43,19 +43,19 @@
   border-radius: 5px;
 }
 .modal .container .head {
-  padding: 7px 10px;
+  padding: var(--section-padding);
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid var(--border-color);
 }
 .modal .container .body {
-  padding: 7px 10px;
+  padding: var(--section-padding);
   overflow-y: auto;
   flex: 1;
 }
 .modal .container .foot {
-  padding: 7px 10px;
+  padding: var(--section-padding);
   display: flex;
   justify-content: flex-end;
   align-items: center;
