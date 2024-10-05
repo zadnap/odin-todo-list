@@ -7,8 +7,8 @@ function TodoList(todoList) {
   todoListElement.classList.add("todo-list");
 
   const newTodoBtn = document.createElement("button");
-  newTodoBtn.classList.add("create-todo");
-  newTodoBtn.innerHTML = `New <span><i class="fa-solid fa-plus"></i></span>`;
+  newTodoBtn.classList.add("create-todo", "btn");
+  newTodoBtn.innerHTML = `New <i class="fa-solid fa-plus"></i>`;
 
   const list = document.createElement("ul");
   todoList.forEach((todo) => {

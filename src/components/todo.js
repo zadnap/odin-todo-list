@@ -19,7 +19,7 @@ function Todo(title, description, dueDate) {
             <h4 class="title">${title}</h4>
             <p class="description">${description}</p>
         </div>
-        <button class="edit-btn">Edit</button>
+        <button class="edit-btn btn">Edit</button>
     `;
 
   return todoElement;

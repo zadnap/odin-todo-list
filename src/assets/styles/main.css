@@ -1,44 +1,6 @@
-/* Reset CSS */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-html {
-  font-size: 16px;
-  font-family: "Poppins", system-ui, sans-serif;
-  font-weight: 300;
-}
-:root {
-  --primary-color: #ffba00;
-  --overlay-color: #00000010;
-  --text-color: #111827;
-  --sub-text-color: #71717a;
-  --cyan: #0284c7;
-  --yellow: #fbbf24;
-  --red: #dc2626;
-}
-
-ul,
-li {
-  list-style-type: none;
-}
-button {
-  font: inherit;
-  background-color: transparent;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 7px 10px;
-}
-input[type="text"] {
-  font: inherit;
-  border: none;
-  outline: none;
-  padding: 7px 10px;
-}
-
 body {
+  height: 100vh;
   color: var(--text-color);
+  background-color: var(--background-color);
   padding: 20px;
 }

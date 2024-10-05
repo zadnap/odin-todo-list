@@ -29,11 +29,3 @@
   color: var(--sub-text-color);
   font-weight: 400;
 }
-
-.todo .edit-btn {
-  font-weight: 400;
-  border-radius: 5px;
-}
-.todo .edit-btn:hover {
-  background-color: var(--overlay-color);
-}

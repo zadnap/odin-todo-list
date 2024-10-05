@@ -1,0 +1,19 @@
+.btn {
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border-radius: 7px;
+  padding: 7px 10px;
+}
+.btn:hover {
+  background-color: var(--overlay-color);
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: var(--primary-color);
+}
+.btn-primary:hover {
+  background-color: var(--primary-color);
+}

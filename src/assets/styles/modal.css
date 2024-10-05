@@ -1,0 +1,41 @@
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: var(--modal-background-color);
+  animation: fadeIn 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal .container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  background-color: var(--background-color);
+  animation: zoomOut 0.4s ease-in-out;
+  border-radius: 5px;
+}
+.modal .container .head {
+  padding: 7px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--overlay-color);
+}
+.modal .container .body {
+  padding: 7px 10px;
+  overflow-y: auto;
+  flex: 1;
+}
+.modal .container .foot {
+  padding: 7px 10px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid var(--overlay-color);
+}
