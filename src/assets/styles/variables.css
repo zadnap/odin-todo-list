@@ -2,9 +2,10 @@
   --primary-color: #004eec;
   --background-color: #ffffff;
   --modal-background-color: #0000007c;
-  --overlay-color: #00000010;
+  --overlay-color: #f8f8f8;
   --text-color: #111827;
-  --sub-text-color: #71717a;
+  --sub-text-color: #8e9195;
+  --border-color: #e2e2e2;
   --cyan: #0284c7;
   --yellow: #fbbf24;
   --red: #dc2626;

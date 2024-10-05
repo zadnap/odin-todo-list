@@ -17,7 +17,7 @@ function ProjectListModal() {
   container.innerHTML = `
     <div class="head">
         <h4>Your Project List</h4>
-        <button class="btn"><i class="fa-solid fa-xmark"></i></button>
+        <button class="btn btn-default"><i class="fa-solid fa-xmark"></i></button>
     </div>
     <div class="body">
         ${projectList.map((project) => {
@@ -26,7 +26,7 @@ function ProjectListModal() {
             ${
               currentProject === project
                 ? ""
-                : `<button class="btn">View</button>`
+                : `<button class="btn btn-default">View</button>`
             }
           </div>`;
         })}

@@ -6,11 +6,19 @@ header .title {
   display: inline-block;
   font-size: 1.4rem;
   margin-bottom: 5px;
-  cursor: pointer;
 }
 
 header .description {
   font-size: 1rem;
   color: var(--sub-text-color);
   font-weight: 500;
+  margin-bottom: 10px;
+}
+
+header .actions {
+  display: flex;
+  gap: 10px;
+}
+header .actions .create-todo {
+  margin-right: auto;
 }

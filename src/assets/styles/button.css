@@ -5,8 +5,9 @@
   gap: 5px;
   border-radius: 7px;
   padding: 7px 10px;
+  font-weight: 400;
 }
-.btn:hover {
+.btn-default:hover {
   background-color: var(--overlay-color);
 }
 
@@ -14,6 +15,8 @@
   color: #fff;
   background-color: var(--primary-color);
 }
-.btn-primary:hover {
-  background-color: var(--primary-color);
+
+.btn-discard {
+  color: #fff;
+  background-color: var(--red);
 }
