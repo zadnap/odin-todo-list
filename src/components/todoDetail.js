@@ -23,7 +23,7 @@ function TodoDetail({ title, description, dueDate, checklist }) {
             ${checklist
               .map(
                 (item, index) =>
-                  `<li>
+                  `<li class="checklist-item">
                     <label for=${index}>
                       <input id=${index} type="checkbox" ${
                     item.isChecked ? "checked" : ""

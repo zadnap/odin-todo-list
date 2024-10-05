@@ -9,7 +9,7 @@ const currentTodo = getCurrentTodo();
 const body = document.querySelector("body");
 
 function renderProject() {
-  body.prepend(Header(currentProject.title, currentProject.description));
+  body.appendChild(Header(currentProject.title, currentProject.description));
 }
 
 function renderTodoList() {

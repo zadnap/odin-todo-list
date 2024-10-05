@@ -38,18 +38,18 @@
   margin-top: 10px;
   grid-column: 1 / -1;
 }
-.todo-detail .checklist li {
+.todo-detail .checklist-item {
   border-radius: 5px;
   border: 1px solid var(--border-color);
   transition: all ease 0.1s;
 }
-.todo-detail .checklist li:hover {
+.todo-detail .checklist-item:hover {
   background-color: var(--overlay-color);
 }
-.todo-detail .checklist li input {
+.todo-detail .checklist-item input {
   cursor: pointer;
 }
-.todo-detail .checklist li label {
+.todo-detail .checklist-item label {
   display: flex;
   align-items: center;
   gap: 7px;
@@ -57,9 +57,9 @@
   flex: 1;
   cursor: pointer;
 }
-.todo-detail .checklist li:has(input:checked) {
+.todo-detail .checklist-item:has(input:checked) {
   background-color: var(--overlay-color);
 }
-.todo-detail .checklist li input:checked + label {
+.todo-detail .checklist-item label:has(input:checked) {
   text-decoration: line-through;
 }
