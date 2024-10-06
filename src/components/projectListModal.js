@@ -1,11 +1,7 @@
 import "../assets/styles/modal.css";
 import "../assets/styles/projectListModal.css";
 
-import { getProjects } from "../modules/appController";
-
-function ProjectListModal() {
-  const projectList = getProjects();
-
+function createProjectListModal(projectList) {
   const projectListModalElement = document.createElement("div");
 
   projectListModalElement.classList.add("modal");
@@ -31,4 +27,4 @@ function ProjectListModal() {
   return projectListModalElement;
 }
 
-export default ProjectListModal;
+export default createProjectListModal;

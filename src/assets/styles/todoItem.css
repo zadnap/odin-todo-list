@@ -1,4 +1,4 @@
-.todo {
+.todo-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -9,7 +9,7 @@
   transition: all ease 0.1s;
 }
 
-.todo .date {
+.todo-item .date {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,25 +17,25 @@
   font-weight: 500;
   padding: 0 20px 0 10px;
 }
-.todo .date .month {
+.todo-item .date .month {
   font-size: 1.1rem;
 }
-.todo .date .day {
+.todo-item .date .day {
   font-size: 1.6rem;
 }
 
-.todo .content {
+.todo-item .content {
   flex: 1;
   padding-left: 10px;
 }
-.todo .content .description {
+.todo-item .content .description {
   color: var(--sub-text-color);
 }
 
-.todo.chosen {
+.todo-item.chosen {
   background-color: var(--overlay-color);
 }
 
-.todo:hover {
+.todo-item:hover {
   background-color: var(--overlay-color);
 }

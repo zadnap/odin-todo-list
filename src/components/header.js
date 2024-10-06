@@ -1,6 +1,6 @@
 import "../assets/styles/header.css";
 
-function Header(title, description) {
+function createHeader(title, description) {
   const headerElement = document.createElement("header");
 
   headerElement.innerHTML = `
@@ -17,4 +17,4 @@ function Header(title, description) {
   return headerElement;
 }
 
-export default Header;
+export default createHeader;

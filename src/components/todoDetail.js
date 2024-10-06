@@ -1,10 +1,11 @@
 import { format } from "date-fns";
+
 import "../assets/styles/todoDetail.css";
 
-function TodoDetail({ title, description, dueDate, checklist }) {
+function createTodoDetail({ title, description, dueDate, checklist }) {
   const todoDetailElement = document.createElement("article");
 
-  todoDetailElement.classList.add("todo-detail");
+  todoDetailElement.classList.add("detail");
   todoDetailElement.innerHTML = `
     <div class="head">
         <h4 class="title">${title}</h4>
@@ -40,4 +41,4 @@ function TodoDetail({ title, description, dueDate, checklist }) {
   return todoDetailElement;
 }
 
-export default TodoDetail;
+export default createTodoDetail;

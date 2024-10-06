@@ -1,19 +1,18 @@
-import "../assets/styles/todo.css";
+import "../assets/styles/todoItem.css";
 
 import { format } from "date-fns";
-import { getMonthName } from "../utils/date-format";
 
-function Todo(title, description, dueDate, isChosen) {
-  const month = getMonthName(dueDate);
+function createTodoItem(title, description, dueDate, isChosen) {
+  const month = format(dueDate, "MMM");
   const day = format(dueDate, "dd");
 
-  const todoElement = document.createElement("li");
+  const todoItemElement = document.createElement("li");
 
-  todoElement.classList.add("todo");
+  todoItemElement.classList.add("todo-item");
   if (isChosen) {
-    todoElement.classList.add("chosen");
+    todoItemElement.classList.add("chosen");
   }
-  todoElement.innerHTML = `
+  todoItemElement.innerHTML = `
         <div class="date">
             <span class="month">${month}</span>
             <span class="day">${day}</span>
@@ -24,7 +23,7 @@ function Todo(title, description, dueDate, isChosen) {
         </div>
     `;
 
-  return todoElement;
+  return todoItemElement;
 }
 
-export default Todo;
+export default createTodoItem;

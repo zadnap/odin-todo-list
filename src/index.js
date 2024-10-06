@@ -3,12 +3,9 @@ import "./assets/styles/variables.css";
 import "./assets/styles/main.css";
 import "./assets/styles/button.css";
 
-import {
-  renderProject,
-  renderTodoDetail,
-  renderTodoList,
-} from "./modules/domController";
+import { renderHeader, renderTodoListSection } from "./modules/domController";
 
-renderProject();
-renderTodoList();
-renderTodoDetail();
+document.addEventListener("DOMContentLoaded", () => {
+  renderHeader();
+  renderTodoListSection();
+});
