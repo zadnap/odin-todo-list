@@ -30,7 +30,6 @@
 }
 .todo .content .description {
   color: var(--sub-text-color);
-  font-weight: 400;
 }
 
 .todo.chosen {

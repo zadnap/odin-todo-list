@@ -1,4 +1,5 @@
 import Header from "../components/header";
+import DiscardProjectModal from "../components/discardProjectModal";
 import TodoDetail from "../components/todoDetail";
 import TodoList from "../components/todoList";
 
@@ -10,6 +11,7 @@ const body = document.querySelector("body");
 
 function renderProject() {
   body.appendChild(Header(currentProject.title, currentProject.description));
+  body.appendChild(DiscardProjectModal());
 }
 
 function renderTodoList() {
