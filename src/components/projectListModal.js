@@ -6,10 +6,10 @@ import { getProjects } from "../modules/appController";
 function ProjectListModal() {
   const projectList = getProjects();
 
-  const projectListModal = document.createElement("div");
-  projectListModal.classList.add("modal");
+  const projectListModalElement = document.createElement("div");
 
-  projectListModal.innerHTML = `
+  projectListModalElement.classList.add("modal");
+  projectListModalElement.innerHTML = `
     <div class="container">
       <div class="head">
           <h4>Your Project List</h4>
@@ -28,7 +28,7 @@ function ProjectListModal() {
     </div>
   `;
 
-  return projectListModal;
+  return projectListModalElement;
 }
 
 export default ProjectListModal;
