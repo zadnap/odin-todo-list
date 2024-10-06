@@ -13,7 +13,7 @@ function DiscardProjectModal() {
         <div class="container">
             <div class="head">
                 <h4 class="title">Discard Project</h4>  
-                <button class="btn btn-default"><i class="fa-solid fa-xmark"></i></button>
+                <button class="btn btn-default btn-square"><i class="fa-solid fa-xmark"></i></button>
             </div>
             <div class="body">
                 <p class="message">

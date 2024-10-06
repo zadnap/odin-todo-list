@@ -13,7 +13,7 @@ function ProjectListModal() {
     <div class="container">
       <div class="head">
           <h4>Your Project List</h4>
-          <button class="btn btn-default"><i class="fa-solid fa-xmark"></i></button>
+          <button class="btn btn-default btn-square"><i class="fa-solid fa-xmark"></i></button>
       </div>
       <div class="body">
           ${projectList
