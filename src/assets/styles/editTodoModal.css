@@ -1,0 +1,41 @@
+.modal .container {
+  width: 50%;
+}
+
+.modal .body {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+.modal .body p {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.modal .body .checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.modal .body .checklist-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.modal .body .checklist-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: var(--section-padding);
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+}
+.modal .body .checklist-item.new {
+  padding: 0;
+}
+.modal .body .checklist-item.new input {
+  width: 100%;
+  padding: var(--section-padding);
+}
