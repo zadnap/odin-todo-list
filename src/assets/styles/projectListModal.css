@@ -3,7 +3,7 @@
   max-height: 70%;
 }
 
-.modal .container .body {
+.modal.project-list-modal .container .body {
   padding: 0;
 }
 

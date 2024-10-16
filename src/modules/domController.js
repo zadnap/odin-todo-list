@@ -1,20 +1,27 @@
-import createHeader from "../components/header";
+import Header from "../components/header";
 import createTodoListSection from "../components/todoListSection";
 
 import { getCurrentProject, getCurrentTodo } from "./appController";
 
-const currentProject = getCurrentProject();
-const currentTodo = getCurrentTodo();
-const body = document.querySelector("body");
+const contentContainer = document.querySelector("body");
+
+function resetContent() {
+  contentContainer.innerHTML = "";
+}
 
 function renderHeader() {
-  const header = createHeader(currentProject.title, currentProject.description);
-  body.appendChild(header);
+  const currentProject = getCurrentProject();
+
+  const header = new Header(currentProject.title, currentProject.description);
+  contentContainer.appendChild(header.createElement());
 }
 
 function renderTodoListSection() {
+  const currentProject = getCurrentProject();
+  const currentTodo = getCurrentTodo();
+
   const todoList = createTodoListSection(currentProject, currentTodo);
-  body.appendChild(todoList);
+  contentContainer.appendChild(todoList);
 }
 
-export { renderHeader, renderTodoListSection };
+export { resetContent, renderHeader, renderTodoListSection };

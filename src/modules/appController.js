@@ -48,6 +48,10 @@ function getCurrentTodo() {
   return currentProject.todos[currentTodoIndex];
 }
 
+function setCurrentTodo(index) {
+  currentTodoIndex = index;
+}
+
 export {
   getProjects,
   addProject,
@@ -55,4 +59,5 @@ export {
   setCurrentProject,
   getCurrentProject,
   getCurrentTodo,
+  setCurrentTodo,
 };

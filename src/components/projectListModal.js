@@ -1,30 +1,63 @@
-import "../assets/styles/modal.css";
 import "../assets/styles/projectListModal.css";
 
-function createProjectListModal(projectList) {
-  const projectListModalElement = document.createElement("div");
+import Modal from "./modal";
 
-  projectListModalElement.classList.add("modal");
-  projectListModalElement.innerHTML = `
-    <div class="container">
-      <div class="head">
-          <h4>Your Project List</h4>
-          <button class="btn btn-default btn-square"><i class="fa-solid fa-xmark"></i></button>
-      </div>
-      <div class="body">
-          ${projectList
-            .map((project) => {
-              return `
-                <div class="project">
-                  <h4 class="title">${project.title}</h4>
-                </div>`;
-            })
-            .join("")}
-      </div>
-    </div>
-  `;
+import { setCurrentProject } from "../modules/appController";
+import {
+  renderHeader,
+  renderTodoListSection,
+  resetContent,
+} from "../modules/domController";
 
-  return projectListModalElement;
+class ProjectListModal extends Modal {
+  constructor(projectList) {
+    super();
+    this.projectList = projectList;
+  }
+
+  createElement() {
+    this.element = document.createElement("div");
+    this.element.className = "modal project-list-modal";
+    this.element.innerHTML = `
+      <div class="container">
+        <div class="head">
+            <h4>Your Project List</h4>
+            <button class="btn btn-default btn-square" id="close-modal-btn"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="body">
+          <ul class="project-list">
+            ${this.renderProjectList()}
+          </ul>
+        </div>
+      </div>
+    `;
+    this.element.addEventListener("click", (event) => {
+      this.handleClickClose(event.target);
+      this.handleClickProject(event.target);
+    });
+
+    return this.element;
+  }
+
+  renderProjectList() {
+    return this.projectList
+      .map(
+        (project, index) =>
+          `<li class="project" id="${index}">${project.title}</li>`
+      )
+      .join("");
+  }
+
+  handleClickProject(target) {
+    const listItem = target.closest("li");
+
+    if (!listItem) return;
+
+    setCurrentProject(listItem.id);
+    resetContent();
+    renderHeader();
+    renderTodoListSection();
+  }
 }
 
-export default createProjectListModal;
+export default ProjectListModal;
