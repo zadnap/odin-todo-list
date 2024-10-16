@@ -1,5 +1,5 @@
 import Header from "../components/header";
-import createTodoListSection from "../components/todoListSection";
+import TodoListSection from "../components/todoListSection";
 
 import { getCurrentProject, getCurrentTodo } from "./appController";
 
@@ -20,8 +20,8 @@ function renderTodoListSection() {
   const currentProject = getCurrentProject();
   const currentTodo = getCurrentTodo();
 
-  const todoList = createTodoListSection(currentProject, currentTodo);
-  contentContainer.appendChild(todoList);
+  const todoListSection = new TodoListSection(currentProject, currentTodo);
+  contentContainer.appendChild(todoListSection.createElement());
 }
 
 export { resetContent, renderHeader, renderTodoListSection };

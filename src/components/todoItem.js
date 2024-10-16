@@ -2,28 +2,35 @@ import "../assets/styles/todoItem.css";
 
 import { format } from "date-fns";
 
-function createTodoItem(title, description, dueDate, isChosen) {
-  const month = format(dueDate, "MMM");
-  const day = format(dueDate, "dd");
-
-  const todoItemElement = document.createElement("li");
-
-  todoItemElement.classList.add("todo-item");
-  if (isChosen) {
-    todoItemElement.classList.add("chosen");
+class TodoItem {
+  constructor(title, description, dueDate, isChosen) {
+    this.title = title;
+    this.description = description;
+    this.dueDate = dueDate;
+    this.isChosen = isChosen;
+    this.element = null;
   }
-  todoItemElement.innerHTML = `
+
+  createElement() {
+    this.element = document.createElement("li");
+
+    this.element.classList.add("todo-item");
+    if (this.isChosen) {
+      this.element.classList.add("chosen");
+    }
+    this.element.innerHTML = `
         <div class="date">
-            <span class="month">${month}</span>
-            <span class="day">${day}</span>
+            <span class="month">${format(this.dueDate, "MMM")}</span>
+            <span class="day">${format(this.dueDate, "dd")}</span>
         </div>
         <div class="content">
-            <h4 class="title">${title}</h4>
-            <p class="description">${description}</p>
+            <h4 class="title">${this.title}</h4>
+            <p class="description">${this.description}</p>
         </div>
     `;
 
-  return todoItemElement;
+    return this.element;
+  }
 }
 
-export default createTodoItem;
+export default TodoItem;

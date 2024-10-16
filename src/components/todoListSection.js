@@ -1,41 +1,50 @@
 import "../assets/styles/todoListSection.css";
 
-import createTodoItem from "./todoItem";
-import createTodoDetail from "./todoDetail";
+import TodoDetail from "./todoDetail";
+import TodoItem from "./todoItem";
 
-function createTodoListSection(currentProject, currentTodo) {
-  const todoListSectionElement = document.createElement("section");
-  todoListSectionElement.classList.add("todo-list");
+class TodoListSection {
+  constructor(currentProject, currentTodo) {
+    this.currentProject = currentProject;
+    this.currentTodo = currentTodo;
+    this.element = null;
+  }
 
-  renderTodoList(todoListSectionElement, currentTodo, currentProject.todos);
-  renderTodoDetail(todoListSectionElement, currentTodo);
+  createElement() {
+    this.element = document.createElement("section");
+    this.element.classList.add("todo-list");
 
-  return todoListSectionElement;
-}
+    this.createTodoList();
+    this.createTodoDetail();
 
-function renderTodoList(todoListSectionElement, currentTodo, todos) {
-  const list = document.createElement("ul");
+    return this.element;
+  }
 
-  list.classList.add("list");
+  createTodoList() {
+    const list = document.createElement("ul");
+    const todos = this.currentProject.todos;
 
-  todos.forEach((todo) => {
-    list.appendChild(
-      createTodoItem(
+    list.classList.add("list");
+
+    todos.forEach((todo) => {
+      const todoItem = new TodoItem(
         todo.title,
         todo.description,
         todo.dueDate,
-        currentTodo === todo
-      )
-    );
-  });
+        this.currentTodo === todo
+      );
+      list.appendChild(todoItem.createElement());
+    });
 
-  todoListSectionElement.appendChild(list);
+    this.element.appendChild(list);
+  }
+
+  createTodoDetail() {
+    const currentTodo = this.currentTodo;
+    const todoDetail = new TodoDetail(currentTodo);
+
+    this.element.appendChild(todoDetail.createElement());
+  }
 }
 
-function renderTodoDetail(todoListSectionElement, currentTodo) {
-  const todoDetail = createTodoDetail(currentTodo);
-
-  todoListSectionElement.appendChild(todoDetail);
-}
-
-export default createTodoListSection;
+export default TodoListSection;

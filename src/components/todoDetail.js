@@ -2,26 +2,38 @@ import { format } from "date-fns";
 
 import "../assets/styles/todoDetail.css";
 
-function createTodoDetail({ title, description, dueDate, checklist }) {
-  const todoDetailElement = document.createElement("article");
+class TodoDetail {
+  constructor({ title, description, dueDate, checklist }) {
+    this.title = title;
+    this.description = description;
+    this.dueDate = dueDate;
+    this.checklist = checklist;
+    this.element = null;
+  }
 
-  todoDetailElement.classList.add("detail");
-  todoDetailElement.innerHTML = `
+  createElement() {
+    this.element = document.createElement("article");
+
+    this.element.classList.add("detail");
+    this.element.innerHTML = `
     <div class="head">
-        <h4 class="title">${title}</h4>
+        <h4 class="title">${this.title}</h4>
         <button class="btn btn-default btn-square"><i class="fa-solid fa-minus"></i></button>
     </div>
     <div class="body">
         <div class="text">
-          <p class="description">${description}</p>   
-          <p class="due-date">Due date: ${format(dueDate, "MM/dd/yyyy")}</p>
+          <p class="description">${this.description}</p>   
+          <p class="due-date">Due date: ${format(
+            this.dueDate,
+            "MM/dd/yyyy"
+          )}</p>
         </div>
         <div class="actions">
           <button class="btn btn-default">Edit</button>
           <button class="btn btn-discard">Discard</button>
         </div>
         <ul class="checklist">
-            ${checklist
+            ${this.checklist
               .map(
                 (item, index) =>
                   `<li class="checklist-item">
@@ -38,7 +50,8 @@ function createTodoDetail({ title, description, dueDate, checklist }) {
     </div>
   `;
 
-  return todoDetailElement;
+    return this.element;
+  }
 }
 
-export default createTodoDetail;
+export default TodoDetail;

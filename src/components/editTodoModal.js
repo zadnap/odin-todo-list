@@ -1,12 +1,14 @@
 import "../assets/styles/input.css";
-import "../assets/styles/modal.css";
 import "../assets/styles/editTodoModal.css";
 
-function createEditTodoModal() {
-  const editTodoModalElement = document.createElement("div");
+class EditTodoModal extends Modal {
+  constructor() {
+    super();
+  }
 
-  editTodoModalElement.classList.add("modal");
-  editTodoModalElement.innerHTML = `
+  createElement() {
+    element.className = "modal edit-todo-modal";
+    element.innerHTML = `
         <div class="container">
             <div class="head">
                 <h4>Edit Todo</h4>
@@ -47,7 +49,8 @@ function createEditTodoModal() {
         </div>
     `;
 
-  return editTodoModalElement;
+    return element;
+  }
 }
 
-export default createEditTodoModal;
+export default EditTodoModal;
