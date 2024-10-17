@@ -3,11 +3,7 @@ import "../assets/styles/projectListModal.css";
 import Modal from "./modal";
 
 import { setCurrentProject } from "../modules/appController";
-import {
-  renderHeader,
-  renderTodoListSection,
-  resetContent,
-} from "../modules/domController";
+import { renderHeader, renderTodoListSection } from "../modules/domController";
 
 class ProjectListModal extends Modal {
   constructor(projectList) {
@@ -54,7 +50,6 @@ class ProjectListModal extends Modal {
     if (!listItem) return;
 
     setCurrentProject(listItem.id);
-    resetContent();
     renderHeader();
     renderTodoListSection();
   }

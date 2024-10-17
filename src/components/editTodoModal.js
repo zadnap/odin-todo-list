@@ -7,8 +7,8 @@ class EditTodoModal extends Modal {
   }
 
   createElement() {
-    element.className = "modal edit-todo-modal";
-    element.innerHTML = `
+    this.element.className = "modal edit-todo-modal";
+    this.element.innerHTML = `
         <div class="container">
             <div class="head">
                 <h4>Edit Todo</h4>
@@ -49,7 +49,7 @@ class EditTodoModal extends Modal {
         </div>
     `;
 
-    return element;
+    return this.element;
   }
 }
 

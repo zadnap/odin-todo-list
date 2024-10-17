@@ -27,6 +27,10 @@ function getProjects() {
   return projects;
 }
 
+function setProjects() {
+  setStorage(projects);
+}
+
 function addProject(newProject) {
   projects.push(newProject);
 }
@@ -54,6 +58,7 @@ function setCurrentTodo(index) {
 
 export {
   getProjects,
+  setProjects,
   addProject,
   discardProject,
   setCurrentProject,
