@@ -38,7 +38,7 @@ function addProject(newProject) {
 
 function discardCurrentProject() {
   projects.splice(currentProjectIndex, 1);
-  setCurrentProject(currentProjectIndex - 1);
+  setCurrentProject(0);
   setProjects();
 }
 
