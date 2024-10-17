@@ -33,10 +33,12 @@ function setProjects() {
 
 function addProject(newProject) {
   projects.push(newProject);
+  setProjects();
 }
 
 function discardCurrentProject() {
   projects.splice(currentProjectIndex, 1);
+  setCurrentProject(currentProjectIndex - 1);
   setProjects();
 }
 
@@ -57,6 +59,29 @@ function setCurrentTodo(index) {
   currentTodoIndex = index;
 }
 
+function createProject() {
+  const newProject = new Project("New Project", "Description");
+  const defaultTodo = new Todo(
+    "Default todo",
+    "This is your default todo",
+    new Date(),
+    0
+  );
+  newProject.todos.push(defaultTodo);
+
+  addProject(newProject);
+  setCurrentProject(projects.indexOf(newProject));
+}
+
+function createTodo() {
+  const currentProject = getCurrentProject();
+  const newTodo = new Todo("New todo", "This is your new todo", new Date(), 0);
+
+  currentProject.todos.push(newTodo);
+
+  setProjects(projects);
+}
+
 export {
   getProjects,
   setProjects,
@@ -66,4 +91,6 @@ export {
   getCurrentProject,
   getCurrentTodo,
   setCurrentTodo,
+  createProject,
+  createTodo,
 };

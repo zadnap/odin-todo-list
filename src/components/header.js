@@ -1,15 +1,15 @@
 import "../assets/styles/header.css";
 import {
+  createProject,
+  createTodo,
   discardCurrentProject,
   getCurrentProject,
   getProjects,
   setProjects,
 } from "../modules/appController";
-import { renderHeader } from "../modules/domController";
+import { renderHeader, renderTodoListSection } from "../modules/domController";
 import ConfirmationModal from "./confirmationModal";
 import ProjectListModal from "./projectListModal";
-
-const contentContainer = document.querySelector("body");
 
 class Header {
   constructor(title, description) {
@@ -148,11 +148,15 @@ class Header {
   }
 
   handleCreateTodo() {
-    // TODO
+    createTodo();
+    renderHeader();
+    renderTodoListSection();
   }
 
   handleCreateProject() {
-    // TODO
+    createProject();
+    renderHeader();
+    renderTodoListSection();
   }
 
   handleDiscardProject() {
