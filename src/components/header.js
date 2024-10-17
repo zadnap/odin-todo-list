@@ -1,10 +1,12 @@
 import "../assets/styles/header.css";
 import {
+  discardCurrentProject,
   getCurrentProject,
   getProjects,
   setProjects,
 } from "../modules/appController";
 import { renderHeader } from "../modules/domController";
+import ConfirmationModal from "./confirmationModal";
 import ProjectListModal from "./projectListModal";
 
 const contentContainer = document.querySelector("body");
@@ -37,14 +39,19 @@ class Header {
           <button class="btn btn-default" id="project-list-btn"><i class="fa-solid fa-bars"></i></button>
         </div>
     `;
+
+    this.addListeners();
+
+    return this.element;
+  }
+
+  addListeners() {
     this.element.addEventListener("click", (event) =>
       this.handleClickEvents(event.target)
     );
     this.element.addEventListener("focusout", (event) =>
       this.handleFocusOutEvents(event.target)
     );
-
-    return this.element;
   }
 
   handleClickEvents(target) {
@@ -149,7 +156,15 @@ class Header {
   }
 
   handleDiscardProject() {
-    // TODO
+    const currentProject = getCurrentProject();
+
+    const discardProjectModal = new ConfirmationModal(
+      currentProject.title,
+      "Are you sure to discard",
+      () => discardCurrentProject()
+    );
+
+    discardProjectModal.open();
   }
 
   handleShowProjectList() {

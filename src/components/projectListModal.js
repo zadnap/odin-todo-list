@@ -27,12 +27,17 @@ class ProjectListModal extends Modal {
         </div>
       </div>
     `;
+
+    this.addListeners();
+
+    return this.element;
+  }
+
+  addListeners() {
     this.element.addEventListener("click", (event) => {
       this.handleClickClose(event.target);
       this.handleClickProject(event.target);
     });
-
-    return this.element;
   }
 
   renderProjectList() {
