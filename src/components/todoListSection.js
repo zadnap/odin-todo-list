@@ -2,6 +2,8 @@ import "../assets/styles/todoListSection.css";
 
 import TodoDetail from "./todoDetail";
 import TodoItem from "./todoItem";
+import { renderTodoListSection } from "../modules/domController";
+import { setCurrentTodo } from "../modules/appController";
 
 class TodoListSection {
   constructor(currentProject, currentTodo) {
@@ -16,6 +18,8 @@ class TodoListSection {
 
     this.createTodoList();
     this.createTodoDetail();
+
+    this.addListeners();
 
     return this.element;
   }
@@ -44,6 +48,23 @@ class TodoListSection {
     const todoDetail = new TodoDetail(currentTodo);
 
     this.element.appendChild(todoDetail.createElement());
+  }
+
+  addListeners() {
+    const todoItems = Array.from(this.element.querySelectorAll(".todo-item"));
+
+    this.element.addEventListener("click", (event) => {
+      const todoItem = event.target.closest(".todo-item");
+
+      if (!todoItem) return;
+
+      this.handleChooseTodoItem(todoItems.indexOf(todoItem));
+    });
+  }
+
+  handleChooseTodoItem(index) {
+    setCurrentTodo(index);
+    renderTodoListSection();
   }
 }
 

@@ -59,6 +59,15 @@ function setCurrentTodo(index) {
   currentTodoIndex = index;
 }
 
+function discardCurrentTodo() {
+  const currentProject = getCurrentProject();
+  currentProject.todos.splice(currentTodoIndex, 1);
+
+  setCurrentTodo(currentTodoIndex - 1);
+
+  setProjects(projects);
+}
+
 function createProject() {
   const newProject = new Project("New Project", "Description");
   const defaultTodo = new Todo(
@@ -91,6 +100,7 @@ export {
   getCurrentProject,
   getCurrentTodo,
   setCurrentTodo,
+  discardCurrentTodo,
   createProject,
   createTodo,
 };

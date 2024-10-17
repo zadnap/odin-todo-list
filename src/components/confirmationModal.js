@@ -34,11 +34,11 @@ class ConfirmationModal extends Modal {
   addListeners() {
     this.element.addEventListener("click", (event) => {
       this.handleClickClose(event.target);
-      this.handleClickEvents(event.target);
+      this.handleClickActions(event.target);
     });
   }
 
-  handleClickEvents(target) {
+  handleClickActions(target) {
     const button = target.closest("button");
 
     if (!button) return;
