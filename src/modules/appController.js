@@ -64,7 +64,6 @@ function discardCurrentTodo() {
   currentProject.todos.splice(currentTodoIndex, 1);
 
   setCurrentTodo(null);
-
   setProjects(projects);
 }
 
