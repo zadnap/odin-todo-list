@@ -122,6 +122,7 @@ class Header {
 
     const currentProject = getCurrentProject();
     currentProject.title = input.value || "Add Title";
+
     setProjects();
     renderHeader();
   }
@@ -134,6 +135,7 @@ class Header {
 
     const currentProject = getCurrentProject();
     currentProject.description = input.value || "Add Description";
+
     setProjects();
     renderHeader();
   }
@@ -153,7 +155,7 @@ class Header {
   handleShowProjectList() {
     const projects = getProjects();
     const modal = new ProjectListModal(projects);
-    contentContainer.appendChild(modal.createElement());
+    modal.open();
   }
 }
 

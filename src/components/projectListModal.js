@@ -52,6 +52,7 @@ class ProjectListModal extends Modal {
     setCurrentProject(listItem.id);
     renderHeader();
     renderTodoListSection();
+    this.close();
   }
 }
 

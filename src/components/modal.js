@@ -9,11 +9,17 @@ class Modal {
     const button = target.closest("button");
 
     if (button && button.id === "close-modal-btn") {
-      this.closeModal();
+      this.close();
     }
   }
 
-  closeModal() {
+  open() {
+    this.createElement();
+    const contentContainer = document.querySelector("body");
+    contentContainer.appendChild(this.element);
+  }
+
+  close() {
     if (this.element) {
       this.element.remove();
       this.element = null;
