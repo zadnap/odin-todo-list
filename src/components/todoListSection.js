@@ -17,7 +17,8 @@ class TodoListSection {
     this.element.classList.add("todo-list");
 
     this.createTodoList();
-    this.createTodoDetail();
+
+    if (this.currentTodo) this.createTodoDetail();
 
     this.addListeners();
 
@@ -44,8 +45,7 @@ class TodoListSection {
   }
 
   createTodoDetail() {
-    const currentTodo = this.currentTodo;
-    const todoDetail = new TodoDetail(currentTodo);
+    const todoDetail = new TodoDetail(this.currentTodo);
 
     this.element.appendChild(todoDetail.createElement());
   }

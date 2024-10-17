@@ -2,7 +2,6 @@ import { format } from "date-fns";
 
 import "../assets/styles/todoDetail.css";
 import { discardCurrentTodo, getCurrentTodo } from "../modules/appController";
-import { renderTodoListSection } from "../modules/domController";
 import ConfirmationModal from "./confirmationModal";
 
 class TodoDetail {
@@ -21,7 +20,9 @@ class TodoDetail {
     this.element.innerHTML = `
       <div class="head">
           <h4 class="title">${this.title}</h4>
-          <button class="btn btn-default btn-square"><i class="fa-solid fa-minus"></i></button>
+          <button class="btn btn-default btn-square" id="hide-todo-detail">
+            <i class="fa-solid fa-minus"></i>
+          </button>
       </div>
       <div class="body">
           <div class="text">
@@ -75,6 +76,9 @@ class TodoDetail {
       case "discard-todo-item":
         this.handleDiscardTodo();
         break;
+      case "hide-todo-detail":
+        this.handleHideTodoDetail();
+        break;
       default:
         break;
     }
@@ -90,6 +94,10 @@ class TodoDetail {
     );
 
     discardTodoModal.open();
+  }
+
+  handleHideTodoDetail() {
+    this.element.classList.add("hidden");
   }
 }
 

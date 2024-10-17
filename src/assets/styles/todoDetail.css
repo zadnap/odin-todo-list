@@ -4,6 +4,10 @@
   border-radius: 5px;
 }
 
+.todo-list .detail.hidden {
+  display: none;
+}
+
 .todo-list .detail .head {
   padding: var(--section-padding);
   border-bottom: 1px solid var(--border-color);
