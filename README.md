@@ -10,7 +10,7 @@
 
 - Todo item detail:
 
-![todo item detail](./src/assets/previews/todo-detail.png.png)
+![todo item detail](./src/assets/previews/todo-detail.png)
 
 - Edit Todo Modal: This modal allows user to edit todo item information
 
