@@ -91,6 +91,14 @@ function createTodo() {
   setCurrentTodo(currentProject.todos.length - 1);
 }
 
+function discardChecklistItem(index) {
+  const currentTodo = getCurrentTodo();
+
+  currentTodo.checklist.splice(index, 1);
+
+  setProjects();
+}
+
 export {
   getProjects,
   setProjects,
@@ -102,4 +110,5 @@ export {
   discardCurrentTodo,
   createProject,
   createTodo,
+  discardChecklistItem,
 };

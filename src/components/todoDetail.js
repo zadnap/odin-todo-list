@@ -3,6 +3,7 @@ import { format } from "date-fns";
 import "../assets/styles/todoDetail.css";
 import { discardCurrentTodo, getCurrentTodo } from "../modules/appController";
 import ConfirmationModal from "./confirmationModal";
+import EditTodoModal from "./editTodoModal";
 
 class TodoDetail {
   constructor({ title, description, dueDate, checklist }) {
@@ -72,6 +73,7 @@ class TodoDetail {
 
     switch (button.id) {
       case "edit-todo-item":
+        this.handleEditTodo();
         break;
       case "discard-todo-item":
         this.handleDiscardTodo();
@@ -94,6 +96,11 @@ class TodoDetail {
     );
 
     discardTodoModal.open();
+  }
+
+  handleEditTodo() {
+    const modal = new EditTodoModal();
+    modal.open();
   }
 
   handleHideTodoDetail() {

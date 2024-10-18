@@ -7,7 +7,7 @@
   gap: 10px;
   flex-direction: column;
 }
-.modal .body p {
+.modal.edit-todo-modal .body p {
   display: flex;
   flex-direction: column;
   gap: 5px;
@@ -32,10 +32,15 @@
   border: 1px solid var(--border-color);
   border-radius: 5px;
 }
-.modal .body .checklist-item.new {
-  padding: 0;
+
+.modal .body .new-item {
+  display: flex;
+  gap: 5px;
 }
-.modal .body .checklist-item.new input {
-  width: 100%;
-  padding: var(--section-padding);
+.modal .body .new-item input {
+  flex: 1;
+  border: 1px solid var(--border-color);
+}
+.modal .body .new-item button {
+  border: 1px solid var(--border-color);
 }
