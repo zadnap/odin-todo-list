@@ -1,9 +1,14 @@
 import { format } from "date-fns";
 
 import "../assets/styles/todoDetail.css";
-import { discardCurrentTodo, getCurrentTodo } from "../modules/appController";
+import {
+  discardCurrentTodo,
+  getCurrentTodo,
+  toggleChecked,
+} from "../modules/appController";
 import ConfirmationModal from "./confirmationModal";
 import EditTodoModal from "./editTodoModal";
+import { renderTodoListSection } from "../modules/domController";
 
 class TodoDetail {
   constructor({ title, description, dueDate, checklist }) {
@@ -42,8 +47,8 @@ class TodoDetail {
                 .map(
                   (item, index) =>
                     `<li class="checklist-item">
-                      <label for=${index}>
-                        <input id=${index} type="checkbox" ${
+                      <label for="list-item-${index}">
+                        <input id="list-item-${index}" type="checkbox" ${
                       item.isChecked ? "checked" : ""
                     }> 
                         ${item.title}
@@ -61,12 +66,13 @@ class TodoDetail {
   }
 
   addListeners() {
-    this.element.addEventListener("click", (event) =>
-      this.handleClickEvents(event.target)
-    );
+    this.element.addEventListener("click", (event) => {
+      this.handleClickActions(event.target);
+      this.handleClickCheck(event.target);
+    });
   }
 
-  handleClickEvents(target) {
+  handleClickActions(target) {
     const button = target.closest("button");
 
     if (!button) return;
@@ -84,6 +90,17 @@ class TodoDetail {
       default:
         break;
     }
+  }
+
+  handleClickCheck(target) {
+    const listItemArray = Array.from(
+      this.element.querySelectorAll(".checklist-item")
+    );
+    const listItem = target.closest(".checklist-item");
+
+    if (!listItem) return;
+
+    this.handleToggleChecked(listItemArray.indexOf(listItem));
   }
 
   handleDiscardTodo() {
@@ -105,6 +122,12 @@ class TodoDetail {
 
   handleHideTodoDetail() {
     this.element.classList.add("hidden");
+  }
+
+  handleToggleChecked(index) {
+    toggleChecked(index);
+
+    renderTodoListSection();
   }
 }
 

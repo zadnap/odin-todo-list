@@ -99,6 +99,15 @@ function discardChecklistItem(index) {
   setProjects();
 }
 
+function toggleChecked(index) {
+  const currentTodo = getCurrentTodo();
+
+  currentTodo.checklist[index].isChecked =
+    !currentTodo.checklist[index].isChecked;
+
+  setProjects();
+}
+
 export {
   getProjects,
   setProjects,
@@ -111,4 +120,5 @@ export {
   createProject,
   createTodo,
   discardChecklistItem,
+  toggleChecked,
 };
