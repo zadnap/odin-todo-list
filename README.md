@@ -4,6 +4,30 @@
 
 ### Preview Screenshots:
 
+- Default page: This will appear when you first visit the app
+
+![default page (this will appear when you first visit the app)](./src/assets/previews/default-page.png)
+
+- Todo item detail:
+
+![todo item detail](./src/assets/previews/todo-detail.png.png)
+
+- Edit Todo Modal: This modal allows user to edit todo item information
+
+![default page (this will appear when you first visit the app)](./src/assets/previews/edit-todo-modal.png)
+
+- Checklist: This one is included inside todo items
+
+![checklist](./src/assets/previews/checklist.png)
+
+- Discard Modal:
+
+![discard modal](./src/assets/previews/discard-modal.png)
+
+- Project List:
+
+![project list](./src/assets/previews/project-list.png)
+
 ### Requirements:
 
 - This app contains projects (the user has 1 project by default).
